@@ -15,7 +15,10 @@ class CartView extends StatelessWidget {
           text: 'Checkout',
           width: double.infinity,
           onTap: () {
-            print('Checkout');
+            MessageHelper.showSuccessMessage(
+              context,
+              'Under development',
+            );
           },
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

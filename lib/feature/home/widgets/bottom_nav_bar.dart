@@ -18,7 +18,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       ),
     ),
     CartView(),
-    Center(
+    Center(     
       child: Text(
         'Favourite',
         style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
