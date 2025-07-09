@@ -47,7 +47,7 @@ class CartItemTile extends StatelessWidget {
             ],
           ),
         ),
-        const DividerLine(),
+        
       ],
     );
   }
