@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
 
     Future.delayed(const Duration(seconds: 3), () {
-      context.goNamed(AppRoutes.navbar.name);
+      context.goNamed(AppRoutes.onboarding.name);
     });
   }
 

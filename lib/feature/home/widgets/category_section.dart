@@ -22,34 +22,37 @@ class CategorySection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              title,
-              style: AppTextStyles.montserrat(
-                fontWeight: FontWeight.bold,
-                fontSize: 18.sp,
-              ),
-            ),
-            TextButton(
-              onPressed: onSeeAll,
-              child: Text(
-                'See all',
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                title,
                 style: AppTextStyles.montserrat(
-                  color: AppColors.primaryColor,
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.sp,
                 ),
               ),
-            ),
-          ],
+              TextButton(
+                onPressed: onSeeAll,
+                child: Text(
+                  'See all',
+                  style: AppTextStyles.montserrat(
+                    color: AppColors.primaryColor,
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
         SizedBox(
-          height: 70.h,
+          height: 65.h,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
             itemCount: categories.length,
             separatorBuilder: (_, __) => SizedBox(width: 12.w),
             itemBuilder: (context, index) {

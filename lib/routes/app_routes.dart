@@ -17,6 +17,11 @@ class AppRouter {
         name: AppRoutes.home.name,
         builder: (context, state) => const HomeView(),
       ),
+      GoRoute(
+        path: '/onboarding',
+        name: AppRoutes.onboarding.name,
+        builder: (context, state) => const OnboardingScreen(),
+      ),
      GoRoute(
         path: '/navbar',
         name: AppRoutes.navbar.name,

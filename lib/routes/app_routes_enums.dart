@@ -3,5 +3,6 @@ enum AppRoutes {
   home,
   cart,
   productDetail,
-  navbar
+  navbar,
+  onboarding,
 }
