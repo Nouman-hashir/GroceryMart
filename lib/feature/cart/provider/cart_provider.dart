@@ -37,8 +37,9 @@ class CartProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void removeItem(ProductModel product) {
+  void removeItem(ProductModel product, BuildContext context) {
     _cartItems.remove(product);
+    MessageHelper.showSuccessMessage(context, "${product.name} removed from cart");
     notifyListeners();
   }
 

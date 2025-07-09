@@ -62,7 +62,7 @@ class CartView extends StatelessWidget {
                           quantity: quantity,
                           onIncrement: () => cartProvider.increment(product),
                           onDecrement: () => cartProvider.decrement(product),
-                          onRemove: () => cartProvider.removeItem(product),
+                          onRemove: () => cartProvider.removeItem(product, context),
                         );
                       },
                     ),
