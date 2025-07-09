@@ -51,7 +51,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
             children: screens,
           ),
           bottomNavigationBar: Container(
-            height: 60.h,
+            height: 70.h,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
