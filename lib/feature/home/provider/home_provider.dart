@@ -2,9 +2,14 @@ import '../../../grocery_mart.dart';
 
 class HomeProvider with ChangeNotifier {
   final ProductService _service = ProductService();
+
+  TextEditingController searchController = TextEditingController();
   int currentIndex = 0;
 
+  final List<ProductModel> _allProductsBackup = [];
+
   List<ProductModel> _allProducts = [];
+  List<CategoryModel> get categories => _categories;
 
   String? _selectedCategory;
   String? get selectedCategory => _selectedCategory;
@@ -18,11 +23,13 @@ class HomeProvider with ChangeNotifier {
   List<ProductModel> get groceryProducts =>
       _allProducts.skip(4).take(2).toList();
 
-  // For now, just return all groceryProducts (no real filtering)
   List<ProductModel> get filteredGroceryProducts => groceryProducts;
 
-  Future<void> loadProducts() async {
-    _allProducts = await _service.fetchProducts();
+   Future<void> loadProducts() async {
+    final fetched = await _service.fetchProducts();
+    _allProducts = fetched;
+    _allProductsBackup.clear();
+    _allProductsBackup.addAll(fetched);
     notifyListeners();
   }
 
@@ -48,6 +55,17 @@ class HomeProvider with ChangeNotifier {
       backgroundColor: Colors.yellow.shade100,
     ),
   ];
-
-  List<CategoryModel> get categories => _categories;
+  void searchProducts(String query) {
+    if (query.trim().isEmpty) {
+      _allProducts = [..._allProductsBackup];
+    } else {
+      _allProducts = _allProductsBackup
+          .where(
+            (product) =>
+                product.name.toLowerCase().contains(query.toLowerCase()),
+          )
+          .toList();
+    }
+    notifyListeners();
+  }
 }
