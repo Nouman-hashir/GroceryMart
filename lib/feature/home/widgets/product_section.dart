@@ -1,31 +1,36 @@
+
 import '../../../grocery_mart.dart';
 
-class ProductSection extends StatelessWidget {
+class ProductHorizontalSection extends StatelessWidget {
   final String title;
   final List<ProductModel> products;
-  final bool? isCategory;
+  final VoidCallback? onSeeAll;
 
-  const ProductSection({super.key, required this.title, required this.products, this.isCategory});
+  const ProductHorizontalSection({
+    super.key,
+    required this.title,
+    required this.products,
+    this.onSeeAll,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 7),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                title,
-                style: AppTextStyles.montserrat(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18.sp,
-                ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              title,
+              style: AppTextStyles.montserrat(
+                fontWeight: FontWeight.bold,
+                fontSize: 18.sp,
               ),
+            ),
+            if (onSeeAll != null)
               TextButton(
-                onPressed: () {},
+                onPressed: onSeeAll,
                 child: Text(
                   'See all',
                   style: AppTextStyles.montserrat(
@@ -35,26 +40,17 @@ class ProductSection extends StatelessWidget {
                   ),
                 ),
               ),
-            ],
-          ),
+          ],
         ),
-           if (isCategory == true) ...[
-             PulsesRow(),
-           ],
-        
-        8.verticalSpace, 
-        GridView.builder(
-          shrinkWrap: true,
-          padding: EdgeInsets.zero, 
-          itemCount: products.length,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            mainAxisExtent: 190,
-            crossAxisSpacing: 15,
-            mainAxisSpacing: 10, 
+        SizedBox(
+          height: 220.h,
+          child: ListView.builder(
+            itemCount: products.length,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              return ProductCard(product: products[index]);
+            },
           ),
-          itemBuilder: (_, i) => ProductCard(product: products[i]),
         ),
       ],
     );

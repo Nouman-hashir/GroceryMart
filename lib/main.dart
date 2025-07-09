@@ -1,9 +1,12 @@
-
 import 'package:grocery_mart/grocery_mart.dart';
 
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  final cartStorageService = CartStorageService();
+  await cartStorageService.loadCart();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {

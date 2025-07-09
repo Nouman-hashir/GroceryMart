@@ -1,11 +1,14 @@
 
 class ProductModel {
+    final String id;
+
   final String name;
   final String unit;
   final double price;
   final String image;
 
   ProductModel({
+    required this.id,
     required this.name,
     required this.unit,
     required this.price,
@@ -14,6 +17,7 @@ class ProductModel {
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
     return ProductModel(
+      id: json['id'] ?? json['name'], 
       name: json['name'],
       unit: json['unit'],
       price: (json['price'] as num).toDouble(),
@@ -22,6 +26,7 @@ class ProductModel {
   }
 
   Map<String, dynamic> toJson() => {
+        'id': id,
         'name': name,
         'unit': unit,
         'price': price,
