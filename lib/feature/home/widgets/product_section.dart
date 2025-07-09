@@ -50,7 +50,7 @@ class ProductSection extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            mainAxisExtent: 180,
+            mainAxisExtent: 190,
             crossAxisSpacing: 15,
             mainAxisSpacing: 10, 
           ),

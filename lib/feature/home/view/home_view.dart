@@ -22,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
         padding:  EdgeInsets.symmetric(horizontal: 16.w, vertical:40.h),
         child: SingleChildScrollView(
           child: Column(
-            spacing: 8,
+            spacing: 4,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const LocationHeader(),

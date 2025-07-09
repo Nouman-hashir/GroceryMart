@@ -1,10 +1,7 @@
-
-
-
 import '../../../grocery_mart.dart';
 
 class BottomNavScreen extends StatefulWidget {
-    final int? screenIndex;
+  final int? screenIndex;
   const BottomNavScreen({super.key, this.screenIndex});
 
   @override
@@ -14,13 +11,19 @@ class BottomNavScreen extends StatefulWidget {
 class _BottomNavScreenState extends State<BottomNavScreen> {
   final List<Widget> screens = const [
     HomeView(),
-    // ExploreScreen(),
-    // CartScreen(),
-    // FavouriteScreen(),
-    // AccountScreen(),
+    CartView(),
+    Placeholder(),
+    Placeholder(),
+    Placeholder(),
   ];
 
-  final List<String> titles = ['Shop', 'Explore', 'Cart', 'Favourite', 'Account'];
+  final List<String> titles = [
+    'Shop',
+    'Explore',
+    'Cart',
+    'Favourite',
+    'Account',
+  ];
 
   final List<String> filledIcons = [
     AppImages.shopFill,
@@ -76,8 +79,12 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
                           height: 24.h,
                           width: 24.w,
                           child: Image.asset(
-                            isSelected ? filledIcons[index] : unfilledIcons[index],
-                            color: isSelected ? AppColors.primaryColor : AppColors.black,
+                            isSelected
+                                ? filledIcons[index]
+                                : unfilledIcons[index],
+                            color: isSelected
+                                ? AppColors.primaryColor
+                                : AppColors.black,
                           ),
                         ),
                         SizedBox(height: 4.h),
@@ -86,7 +93,9 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
                           style: AppTextStyles.montserrat(
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w600,
-                            color: isSelected ? AppColors.primaryColor : AppColors.black,
+                            color: isSelected
+                                ? AppColors.primaryColor
+                                : AppColors.black,
                           ),
                         ),
                       ],

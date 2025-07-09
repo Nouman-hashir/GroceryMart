@@ -1,6 +1,5 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:carousel_slider/carousel_slider.dart';
 import '../../../grocery_mart.dart';
 
 class OfferBanner extends StatefulWidget {
@@ -22,7 +21,7 @@ class _OfferBannerState extends State<OfferBanner> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 140.h,
+      height: 126.h,
       child: Stack(
         children: [
           CarouselSlider.builder(
@@ -51,7 +50,6 @@ class _OfferBannerState extends State<OfferBanner> {
               },
             ),
           ),
-
           Positioned(
             bottom: 12.h,
             left: 0,
@@ -68,7 +66,7 @@ class _OfferBannerState extends State<OfferBanner> {
                   decoration: BoxDecoration(
                     color: isActive
                         ? AppColors.primaryColor
-                        : Colors.white.withOpacity(0.6),
+                        : Colors.grey.withOpacity(0.6),
                     borderRadius: BorderRadius.circular(12.r),
                   ),
                 );
