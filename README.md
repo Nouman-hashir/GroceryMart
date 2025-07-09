@@ -1,16 +1,40 @@
-# grocery_mart
+🛒 GroceryMart — Flutter Grocery App
+GroceryMart is a modern Flutter application developed as part of the MUST Company Flutter Intern Assessment. This project demonstrates essential e-commerce app features with a focus on clean architecture, reusable UI components, and persistent cart data — all without using a backend. The app follows scalable state management with Provider, simulates product data from local sources, and persists user cart selections using SharedPreferences.
 
-A new Flutter project.
+📲 Features
+✅ Core Functionalities
+Home Screen
 
-## Getting Started
+Display featured products (Exclusive Offers, Best Selling, Groceries)
 
-This project is a starting point for a Flutter application.
+Category filtering using horizontal chips (e.g., Pulses)
 
-A few resources to get you started if this is your first Flutter project:
+Reusable and clean product cards
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Shopping Cart
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Add/remove products from cart
+
+Adjust quantity with + / - buttons
+
+Persistent cart (saved locally)
+
+Local Data Management
+
+Hardcoded/mock product data (JSON-like structure)
+
+Cart persisted using SharedPreferences (can easily be switched to Hive)
+
+🧱 Architecture & Stack
+State Management: Provider
+
+Routing: go_router
+
+Storage: SharedPreferences (Hive support optional)
+
+UI: Flutter + ScreenUtil for responsiveness
+
+Animations: Carousel, Transitions, and ScaleEffects
+
+Modular Structure: Clean folder separation (features, models, utils, widgets)
+
