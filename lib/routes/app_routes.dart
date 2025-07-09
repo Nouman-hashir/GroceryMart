@@ -1,4 +1,3 @@
-
 import 'package:grocery_mart/grocery_mart.dart';
 
 class AppRouter {
@@ -8,17 +7,28 @@ class AppRouter {
     initialLocation: '/splash',
     routes: [
       GoRoute(
-  path: '/splash',
-  name: AppRoutes.splash.name,
-  builder: (context, state) => const SplashScreen(),
-),
+        path: '/splash',
+        name: AppRoutes.splash.name,
+        builder: (context, state) => const SplashScreen(),
+      ),
 
       GoRoute(
         path: '/home',
         name: AppRoutes.home.name,
         builder: (context, state) => const HomeView(),
       ),
-     
+     GoRoute(
+        path: '/navbar',
+        name: AppRoutes.navbar.name,
+        builder: (context, state) {
+          final selectedIndex = state.extra as int?;
+          if (selectedIndex == null) {
+            return BottomNavScreen();
+          } else {
+            return BottomNavScreen(screenIndex: selectedIndex);
+          }
+        },
+      ),
     ],
   );
 }

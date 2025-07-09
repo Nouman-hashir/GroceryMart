@@ -1,5 +1,4 @@
 // ignore_for_file: use_build_context_synchronously
-
 import '../../grocery_mart.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
 
     Future.delayed(const Duration(seconds: 3), () {
-      context.goNamed(AppRoutes.home.name);
+      context.goNamed(AppRoutes.navbar.name);
     });
   }
 

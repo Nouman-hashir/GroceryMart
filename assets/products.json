@@ -1,0 +1,39 @@
+
+[
+  {
+    "name": "Organic Banana",
+    "unit": "7pcs",
+    "price": 4.99,
+    "image": "assets/images/item1.png"
+  },
+  {
+    "name": "Red Apple",
+    "unit": "1kg",
+    "price": 5.99,
+    "image": "assets/images/item2.png"
+  },
+  {
+    "name": "Green Grapes",
+    "unit": "500g",
+    "price": 6.49,
+    "image": "assets/images/best_selling1.png"
+  },
+  {
+    "name": "Broccoli",
+    "unit": "1pc",
+    "price": 2.99,
+    "image": "assets/images/best_selling2.png"
+  },
+  {
+    "name": "beef Bone",
+    "unit": "500g",
+    "price": 1.99,
+    "image": "assets/images/grocery1.png"
+  },
+  {
+    "name": "Broller chicken",
+    "unit": "1kg",
+    "price": 3.49,
+    "image": "assets/images/grocery2.png"
+  }
+]
