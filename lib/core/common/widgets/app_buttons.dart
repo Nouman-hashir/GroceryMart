@@ -119,32 +119,36 @@ class CustomAppButtons {
     double borderRadius = 8,
     double? width,
     EdgeInsets padding = const EdgeInsets.symmetric(
-      vertical: 14,
+      vertical: 18,
       horizontal: 16,
     ),
     Color? shadowColor,
     double? elevation,
   }) {
-    return SizedBox(
-      width: width,
-      child: OutlinedButton(
-        onPressed: onTap,
-        style: OutlinedButton.styleFrom(
-          backgroundColor: backgroundColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: SizedBox(
+        width: width,
+        child: OutlinedButton(
+          onPressed: onTap,
+          style: OutlinedButton.styleFrom(
+            backgroundColor: backgroundColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(borderRadius),
+            ),
+            side: BorderSide(color: borderColor, width: 1),
+            padding: padding,
+          
+            shadowColor: shadowColor,
+            elevation: elevation,
           ),
-          side: BorderSide(color: borderColor, width: 1),
-          padding: padding,
-          shadowColor: shadowColor,
-          elevation: elevation,
-        ),
-        child: Text(
-          text,
-          style: AppTextStyles.montserrat(
-            fontSize: fontSize.sp,
-            fontWeight: fontWeight,
-            color: textColor,
+          child: Text(
+            text,
+            style: AppTextStyles.montserrat(
+              fontSize: fontSize.sp,
+              fontWeight: fontWeight,
+              color: textColor,
+            ),
           ),
         ),
       ),
@@ -154,7 +158,7 @@ class CustomAppButtons {
   static Widget primaryIconButton({
     required String text,
     required VoidCallback onTap,
-    Color backgroundColor = Colors.pink,
+    Color backgroundColor = AppColors.primaryColor,
     // Color bordercolor = AppColors.primaryColor,
     Color textColor = AppColors.black,
     double fontSize = 16,

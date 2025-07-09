@@ -46,10 +46,16 @@ class ProductCard extends StatelessWidget {
                   fontSize: 16.sp,
                 ),
               ),
-              const CircleAvatar(
+              CircleAvatar(
                 radius: 14,
                 backgroundColor: Colors.green,
-                child: Icon(Icons.add, color: Colors.white, size: 18),
+                child: IconButton(
+                  padding: EdgeInsets.zero,
+                  icon:  const Icon(Icons.add, color: Colors.white, size: 18),
+                  onPressed: () {
+                    context.read<CartProvider>().addToCart(product, context);
+                  },
+                ),
               ),
             ],
           ),
