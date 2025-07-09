@@ -7,7 +7,7 @@ List<SingleChildWidget> registerGlobalNotifiers() {
 
   return [
         ChangeNotifierProvider(create: (_) => HomeProvider()),
-        ChangeNotifierProvider(create: (_) => CartProvider()),
+        ChangeNotifierProvider( create: (_) => CartProvider(CartStorageService())..loadCart(),),
    
   ];
 }

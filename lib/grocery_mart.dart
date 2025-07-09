@@ -11,3 +11,6 @@ export 'package:provider/provider.dart';
 export 'package:google_fonts/google_fonts.dart';
 export 'package:carousel_slider/carousel_slider.dart';
 export 'package:get_it/get_it.dart';
+export 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+export 'package:lottie/lottie.dart';
+export 'package:shared_preferences/shared_preferences.dart';

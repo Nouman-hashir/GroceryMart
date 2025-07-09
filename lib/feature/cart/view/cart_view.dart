@@ -1,5 +1,7 @@
 // ignore_for_file: avoid_print
 
+
+
 import '../../../grocery_mart.dart';
 
 class CartView extends StatelessWidget {
@@ -34,13 +36,10 @@ class CartView extends StatelessWidget {
         ),
         body: cartProvider.cartItems.isEmpty
             ? Center(
-                child: Text(
-                  'Your cart is empty',
-                  style: AppTextStyles.montserrat(
-                    fontSize: 18.sp,
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w500,
-                  ),
+                child: Lottie.asset(
+                  'assets/lotties/empty.json',
+                  width: 250.w,
+                  height: 200.h,
                 ),
               )
             : Column(

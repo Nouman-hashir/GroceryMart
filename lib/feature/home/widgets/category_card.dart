@@ -5,6 +5,7 @@ class CategoryCard extends StatelessWidget {
   final String title;
   final Color backgroundColor;
   final VoidCallback? onTap;
+  final bool isSelected;
 
   const CategoryCard({
     super.key,
@@ -12,6 +13,7 @@ class CategoryCard extends StatelessWidget {
     required this.title,
     required this.backgroundColor,
     this.onTap,
+    this.isSelected = false,
   });
 
   @override
@@ -19,23 +21,26 @@ class CategoryCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 70.h,
-        width: 170.w, 
-        padding: EdgeInsets.symmetric(horizontal: 13.w, vertical: 12.h),
+        width: 150.w,
+        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: isSelected ? AppColors.primaryColor : Colors.transparent,
+            width: 1.5.w,
+          ),
         ),
         child: Row(
           children: [
             Image.asset(
               imagePath,
-              height: 60.h,
-              width: 60.w,
+              height: 40.h,
+              width: 40.w,
               fit: BoxFit.contain,
             ),
             SizedBox(width: 10.w),
-            Expanded( 
+            Expanded(
               child: Text(
                 title,
                 style: AppTextStyles.montserrat(
