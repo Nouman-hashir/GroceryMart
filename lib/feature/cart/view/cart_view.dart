@@ -1,7 +1,5 @@
 // ignore_for_file: avoid_print
 
-
-
 import '../../../grocery_mart.dart';
 
 class CartView extends StatelessWidget {
@@ -61,7 +59,8 @@ class CartView extends StatelessWidget {
                           quantity: quantity,
                           onIncrement: () => cartProvider.increment(product),
                           onDecrement: () => cartProvider.decrement(product),
-                          onRemove: () => cartProvider.removeItem(product, context),
+                          onRemove: () =>
+                              cartProvider.removeItem(product, context),
                         );
                       },
                     ),

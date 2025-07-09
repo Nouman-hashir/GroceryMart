@@ -24,8 +24,7 @@ class _SimpleSearchBarState extends State<SimpleSearchBar> {
   Widget build(BuildContext context) {
     return Container(
       height: 50.h,
-      decoration: BoxDecoration(
-        
+      decoration: BoxDecoration(        
         color: AppColors.secondary,
         borderRadius: BorderRadius.circular(13.0),
       ),
@@ -33,14 +32,14 @@ class _SimpleSearchBarState extends State<SimpleSearchBar> {
       margin: EdgeInsets.symmetric(horizontal: 10.w),
       child: Row(
         children: [
-          Icon(Icons.search_rounded, color: Colors.black54, size: 23.sp),
+          Icon(Icons.search_rounded, color: AppColors.black, size: 23.sp),
           SizedBox(width: 10.w),
           Expanded(
             child: TextField(
               onChanged: widget.onChanged,
               onSubmitted: widget.onSubmit,
               controller: widget.controller,
-              style:  AppTextStyles.montserrat(color: Colors.black87, fontSize: 17.sp, fontWeight: FontWeight.w400),  
+              style:  AppTextStyles.montserrat(color: Colors.black, fontSize: 17.sp, fontWeight: FontWeight.w400),  
               decoration: InputDecoration(
                 hintText: widget.hintText,
                 hintMaxLines: 1,
