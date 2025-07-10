@@ -1,5 +1,4 @@
 // ignore_for_file: avoid_print
-
 import '../../../grocery_mart.dart';
 
 class CartView extends StatelessWidget {
@@ -15,15 +14,17 @@ class CartView extends StatelessWidget {
           text: 'Checkout',
           width: double.infinity,
           onTap: () {
-            MessageHelper.showSuccessMessage(
-              context,
-              'Under development',
-            );
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              if (context.mounted) {
+                MessageHelper.showSuccessMessage(context, 'Under development');
+              }
+            });
           },
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         backgroundColor: AppColors.bgColor,
         appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.transparent),
           backgroundColor: AppColors.bgColor,
           title: Text(
             'My Cart',

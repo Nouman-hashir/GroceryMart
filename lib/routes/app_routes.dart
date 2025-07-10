@@ -1,3 +1,4 @@
+import 'package:grocery_mart/feature/details/view/details_view.dart';
 import 'package:grocery_mart/grocery_mart.dart';
 
 class AppRouter {
@@ -21,6 +22,14 @@ class AppRouter {
         path: '/onboarding',
         name: AppRoutes.onboarding.name,
         builder: (context, state) => const OnboardingScreen(),
+      ),
+       GoRoute(
+        path: '/productDetails',
+        name: AppRoutes.productDetails.name,
+        builder: (context, state) {
+          final product = state.extra as ProductModel;
+          return DetailsView(product: product);
+        },
       ),
      GoRoute(
         path: '/navbar',
