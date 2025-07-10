@@ -5,4 +5,5 @@ enum AppRoutes {
   productDetail,
   navbar,
   onboarding,
+  productDetails, 
 }

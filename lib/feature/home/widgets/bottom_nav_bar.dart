@@ -11,25 +11,10 @@ class BottomNavScreen extends StatefulWidget {
 class _BottomNavScreenState extends State<BottomNavScreen> {
   final List<Widget> screens = const [
     HomeView(),
-    Center(
-      child: Text(
-        'Explore',
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-      ),
-    ),
+    ExploreView(),
     CartView(),
-    Center(     
-      child: Text(
-        'Favourite',
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-      ),
-    ),
-    Center(
-      child: Text(
-        'Account',
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-      ),
-    ),
+    FavoriteView(),
+    ProfileView(),
   ];
 
   final List<String> titles = [
