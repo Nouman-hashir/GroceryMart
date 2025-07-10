@@ -1,4 +1,3 @@
-
 import '../../../grocery_mart.dart';
 
 class CartProvider with ChangeNotifier {
@@ -11,8 +10,8 @@ class CartProvider with ChangeNotifier {
 
   /// Public: Map of ProductModel to quantity
   Map<ProductModel, int> get cartItems => {
-        for (var item in _cartItems.values) item.product: item.quantity,
-      };
+    for (var item in _cartItems.values) item.product: item.quantity,
+  };
 
   double get totalPrice => _cartItems.values
       .map((item) => item.product.price * item.quantity)
@@ -62,7 +61,10 @@ class CartProvider with ChangeNotifier {
 
   void removeItem(ProductModel product, BuildContext context) {
     _cartItems.remove(product.id);
-    MessageHelper.showSuccessMessage(context, "${product.name} removed from cart");
+    MessageHelper.showSuccessMessage(
+      context,
+      "${product.name} removed from cart",
+    );
     _saveCart();
     notifyListeners();
   }

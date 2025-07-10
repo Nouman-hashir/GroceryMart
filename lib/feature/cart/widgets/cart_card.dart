@@ -26,10 +26,7 @@ class CartItemTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Divider(
-      color: Colors.grey.shade300,
-      height: 1,
-    ),
+        Divider(color: Colors.grey.shade300, height: 1),
         Padding(
           padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
           child: Row(
