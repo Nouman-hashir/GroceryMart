@@ -1,4 +1,3 @@
-import 'package:grocery_mart/feature/details/view/details_view.dart';
 import 'package:grocery_mart/grocery_mart.dart';
 
 class AppRouter {
